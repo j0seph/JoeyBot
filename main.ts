@@ -20,15 +20,23 @@ export class Bot {
     if (args.apiai){
       let result  = args.apiai.result;
 
+      if (result.fulfillment.messages){
         for (let message of result.fulfillment.messages){
-          if (message.payload && message.payload.facebook){
-            return cb(message.payload.facebook);
-          }
+            if (message.payload && message.payload.facebook){
+              return cb(message.payload.facebook);
+            }
         }
+      }
 
+      if (result.fulfillment.speech.length === 0){
         return cb({
-            text : result.fulfillment.speech
+          text : "Sorry, I didn't understand."
         });
+      }
+
+      return cb({
+          text : result.fulfillment.speech
+      });
     }
   }
 }

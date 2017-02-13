@@ -15,11 +15,18 @@ var Bot = (function () {
         var args = this.args;
         if (args.apiai) {
             var result = args.apiai.result;
-            for (var _i = 0, _a = result.fulfillment.messages; _i < _a.length; _i++) {
-                var message = _a[_i];
-                if (message.payload.facebook) {
-                    return cb(message.payload.facebook);
+            if (result.fulfillment.messages) {
+                for (var _i = 0, _a = result.fulfillment.messages; _i < _a.length; _i++) {
+                    var message = _a[_i];
+                    if (message.payload && message.payload.facebook) {
+                        return cb(message.payload.facebook);
+                    }
                 }
+            }
+            if (result.fulfillment.speech.length === 0) {
+                return cb({
+                    text: "Sorry, I didn't understand."
+                });
             }
             return cb({
                 text: result.fulfillment.speech
