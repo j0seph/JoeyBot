@@ -38,5 +38,10 @@ export class Bot {
           text : result.fulfillment.speech
       });
     }
+    else {
+      cb({
+        text : "\"args.apiai\" is not configured."
+      });
+    }
   }
 }
