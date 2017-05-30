@@ -1,19 +1,24 @@
 {
-	"author": "Corner Agency <joseph@corneragency.com>",
-	"dependencies": {},
-	"description": "This is a chatbot about Joseph A. Holguin.",
-	"keywords": [
-		"Recime",
-		"Bot"
-	],
-	"license": "Creative Commons- Attribution-NonCommercial-NoDerivatives 4.0 International",
-	"main": "main.js",
-	"name": "joeybot",
-	"private": true,
-	"scripts": {
-		"build": "tsc",
-		"preinstall": "npm install -g typescript"
-	},
-	"title": "JoeyBot",
-	"version": "1.0.1"
+  "author": "Corner Agency <joseph@corneragency.com>",
+  "dependencies": {
+    "apiai": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.12",
+    "typescript": "^2.2.2"
+  },
+  "description": "This is a chatbot about Joseph A. Holguin.",
+  "keywords": [
+    "Recime",
+    "Bot"
+  ],
+  "license": "Creative Commons- Attribution-NonCommercial-NoDerivatives 4.0 International",
+  "main": "main.js",
+  "name": "joeybot",
+  "private": true,
+  "scripts": {
+    "build": "tsc"
+  },
+  "title": "JoeyBot",
+  "version": "1.0.1"
 }
