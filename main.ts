@@ -13,6 +13,11 @@ export class Bot {
     let textRequest = new TextRequest(args.sender);
 
     return new Promise((resolve, reject)=>{
+        if (args.event && args.event.name === "start"){
+            return resolve({
+              text : "I'm an AI chatbot. Please ask me basic questions to learn about Joseph Holguin"
+            })
+        }
         textRequest.extract(text).then((result)=>{
             resolve({
                 text : result
